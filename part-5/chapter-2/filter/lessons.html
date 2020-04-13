@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Info School</title>
+</head>
+
+<body>
+  <div class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <nav class="col navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" width="50" height="50" alt="Info Logo" />
+            Info School
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="lessons.html">Cours</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row my-3">
+      <div class="col">
+        <h1>Cours</h1>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <input class="form-control" id="searchInput" type="text" placeholder="Search..">
+      </div>
+    </div>
+    <div class="row" id="lessonList">
+      <div class="col-12 col-lg-4">
+        <div class="card mb-4 mb-lg-0 border-light shadow-sm">
+          <img src="images/lessons/css.jpeg" alt="Animations CSS modernes" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Créez des animations CSS</h5>
+            <p class="card-text">Vous allez plonger dans le monde des animations CSS pour donner vie à vos pages web !</p>
+            <a href="lesson-1.html" class="btn btn-primary stretched-link">Démarrer l'apprentissage</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="card mb-4 mb-lg-0 border-light shadow-sm">
+          <img src="images/lessons/js.jpeg" alt="Programmation JavaScript" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Programmer avec JavaScript</h5>
+            <p class="card-text">Ce cours est conçu pour vous enseigner les bases du langage de programmation JavaScript.</p>
+            <a href="lesson-1.html" class="btn btn-primary stretched-link">Démarrer l'apprentissage</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="card mb-4 mb-lg-0 border-light shadow-sm">
+          <img src="images/lessons/swift.jpeg" alt="Programmation Swift" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Les fondamentaux de Swift</h5>
+            <p class="card-text">Découvrez le développement iOS et réalisez des applications taillées pour l'iPhone et l'iPad !</p>
+            <a href="lesson-1.html" class="btn btn-primary stretched-link">Démarrer l'apprentissage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-light mt-4">
+    <div class="container">
+      <div class="row pt-4 pb-3">
+        <div class="col">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item"><a href="#">À propos</a></li>
+            <li class="list-inline-item">&middot;</li>
+            <li class="list-inline-item"><a href="#">Vie privée</a></li>
+            <li class="list-inline-item">&middot;</li>
+            <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script>
+    $(document).ready(function(){
+      $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#lessonList .col-12").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
